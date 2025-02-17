@@ -34,18 +34,10 @@ solana config set -ul    # For localhost
 solana config set -ut    # For testnet
 ```
 
-##### create wallet
-
-```shell
-solana-keygen new --force
-solana address
-```
-
-##### about aridrop
+##### Local Validator
 
 ```sh
-solana airdrop 5
-solana balance
+solana-test-validator
 ```
 
 ##### about build
@@ -61,10 +53,24 @@ solana program deploy ./target/deploy/hello_world.so
 # return a program id: 75HWfQ6FD4F5FthBDgXAQ7mDFCgBmCGDVBU6o1rUQUEf
 ```
 
-##### transfer
+##### create wallet
+
+```shell
+solana-keygen new --force
+solana address
+```
+
+##### about solana cmd
 
 ```sh
-solana transfer --allow-unfunded-recipient Dkrreywj4EPwNpQ2jusegyU2j6uwzxB5t9qgv16rrmnV 0.05  # 给某个地址转0.05
+solana airdrop 5
+solana balance
+# 给某个地址转0.05
+solana transfer --allow-unfunded-recipient Dkrreywj4EPwNpQ2jusegyU2j6uwzxB5t9qgv16rrmnV 0.05  
+# 查看某个交易信息
+solana confirm -v 34K3X41n8ZrcRLbArzJ8PLPgCfkr7qQ7hgSPSVUscUAKkdNAMZrie9YkZXF1z262TpEVk1biLqWmZF1hq7kNgjZL
+# 检测状态
+solana ping
 ```
 
 ##### 账户
